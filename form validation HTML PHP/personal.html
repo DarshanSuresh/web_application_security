@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<title>Personal Information</title>
+<script>
+function validate()
+{
+	var name=document.getElementById("nametext");
+	var age=document.getElementById("agetext");
+	var pass=document.getElementById("passtext");
+	var confirmpass=document.getElementById("conftext");
+	if(name.value=="" || name.value==" ")
+	{
+		alert("Please Enter the name. Its the mandatory field");
+		return false;
+	}
+	if((age.value=="") || (age.value<=18) || (age.value>=100))
+
+	{
+                 
+       		alert("Please Enter the age. Its the mandatory field");
+		return false;
+	}
+	
+	if(pass.value=="" || confirmpass.value=="")
+	{
+		alert("Please Enter the password fiels. Its the mandatory field");
+		return false;
+	}
+	if(pass.value!=confirmpass.value)
+	{
+		alert("Password does not match");
+		return false;
+	}
+	else
+	{
+		alert("Thank you for your details.....");
+		name.value="";
+		age.value="";
+		pass.value="";
+		confirmpass.value="";
+	}
+	
+}
+function reset()
+{
+	var name=document.getElementById("nametext");
+	var age=document.getElementById("agetext");
+	var pass=document.getElementById("passtext");
+	var confirmpass=document.getElementById("conftext");
+	name.value="";
+	age.value="";
+	pass.value="";
+	confirmpass.value="";
+}
+</script>
+</head>
+<body>
+<table width="458" border="0" align="center">
+  <tr>
+<td>
+<img src="images/1.jpg" width="458" height="100"  align="center"></img>
+</td>
+</tr>
+</table>
+<table width="458" border="0" align="center" bgcolor="#CCFFCC">
+
+  <tr>
+    <td colspan="2" align="center"><b>Personal Information</b> </td>
+  </tr>
+  <tr>
+    <td width="104"><label>Name :</label></td>
+    <td width="263"><input type="text" name="name" id="nametext" /></td>
+  </tr>
+ <tr>
+    <td>Age :</td>
+    <td><input type="text" name="password" value="" id="agetext" /> </td>
+  </tr>
+
+  <tr>
+    <td>Password :</td>
+    <td><input type="password" name="password" value="" id="passtext" /> </td>
+  </tr>
+  <tr>
+    <td>Confirm Password :</td>
+    <td><input type="password" name="password" value="" id="conftext"/> </td>
+  </tr>
+   <tr>
+    <td>&nbsp;</td>
+    </tr>
+  <tr align="center">
+   <td><input type="button" name="submit" value="submit" onclick="validate()"></td>
+	<td><input type="reset" name="reset" value="reset" onclick="reset()"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr> 
+</table>
+</body>
+</html>
